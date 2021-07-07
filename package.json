@@ -1,0 +1,14 @@
+{
+  "name": "validatuga",
+  "version": "0.0.1",
+  "description": "Biblioteca de funções que testam a validade de dados sociais de Portugal.",
+  "main": "validatuga.js",
+  "scripts": {
+    "test": "jest __tests__/ --coverage"
+  },
+  "author": "EmanuelGF",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
