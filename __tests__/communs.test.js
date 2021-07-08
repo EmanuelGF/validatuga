@@ -12,10 +12,10 @@ describe('Testa todas as funções de validações comuns', ()=> {
             const listaEmails = emailsValidos
             const resultadoEsperado = true
             //act
-            //assertions
             listaEmails.forEach(email => {
                 //console.log('email: ' + email)
                 const resultadoActual = vt.comuns.valEmail(email)
+                //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })
         })
@@ -25,9 +25,9 @@ describe('Testa todas as funções de validações comuns', ()=> {
             const listaEmails = emailsInvalidos
             const resultadoEsperado = false
             //act
-            //assertions
             listaEmails.forEach(email => {
                 const resultadoActual = vt.comuns.valEmail(email)
+                //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })
         })
@@ -39,15 +39,55 @@ describe('Testa todas as funções de validações comuns', ()=> {
             const listaInputs = ["asdfb", "LASKD", "akfjFOIGJ"]
             const resultadoEsperado = true
             //act
-            //assertions
             listaInputs.forEach(input => {
                 const resultadoActual = vt.comuns.soLetras(input)
+                //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })
         })
     })
-   
-    
-
 })
 
+describe('Testa todas as validações PT', ()=> {
+
+    describe('Testa função telefoneFixo', ()=> {
+
+        test('Só contem numeros.', ()=> {
+            //arrange
+            const tlfFixo = "289000000"
+            const resultadoEsperado = true
+            //act
+            const resultadoActual = vt.valPT.telefoneFixo(tlfFixo)
+            //assertions
+            expect(resultadoActual).toBe(resultadoEsperado)
+        })
+        
+        test('Contém caracteres ilegais', ()=> {
+            //arrange
+            const tlfInvalidos = ["258dsf222", " 151 3131 13", "123_12#123"]
+            const resultadoEsperado = false
+            //act
+            tlfInvalidos.forEach(num => {
+                const resultadoActual = vt.valPT.telefoneFixo(num)
+                //assertions
+                expect(resultadoActual).toBe(resultadoEsperado)
+            })
+        }) 
+    })
+})
+
+
+//templates:
+
+/* 
+
+test('', ()=> {
+    //arrange
+    const dados = 
+    const resultadoEsperado = 
+    //act
+    const resultadoActual = 
+    //assertions
+}) 
+
+*/
