@@ -1,6 +1,6 @@
 # validatuga (WIP)
 
-Biblioteca em Javascript de validações de dados de Portugal como numeros de telefones, Cartão de cidadão, cod-postal etc...
+Biblioteca em Javascript de validações de dados sociais de Paises de Lingua Portuguesa como numeros de telefones, Cartão de cidadão, cod-postal etc...
 Util para validar dados vindos de formulários.
 *Contribuições são mais que bem vindas!*
 
