@@ -1,3 +1,5 @@
+const d = require('./data')
+
 const Validatuga = {
   //Validações comuns
   comuns: {
