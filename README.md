@@ -19,18 +19,18 @@ Util para validar dados vindos de formulários.
 +-- __tests__
 |   +-- testes.test.js
 +-- validatuga.js
-+-- dataPT.js
++-- data.js
 +-- testData.js
 
 ```
 NOTAS IMPORTANTES:
-- dataPT.js contem os dados especificos para as validações.
+- data.js contem os recursos para as validações.
 - validatuga.js é o ficheiro que contem todas as funções para as validações.
-- Jest é a framework usada para testar as funções. É encorajada uma abordagem TDD na construção da biblioteca. 
+- Jest é a framework usada para testar as funções. **É encorajada uma abordagem TDD na construção da biblioteca.**
 
 ## Usar nos vossos projetos
 Basta copiar os ficheiros:
-*validatuga.js* e *dataPT*.js para os vossos projetos e depois importar.
+*validatuga.js* e *data*.js para os vossos projetos e depois importar.
 
 Importar a biblioteca: 
 `const vt = require('../validatuga.js')`
