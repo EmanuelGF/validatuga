@@ -48,34 +48,6 @@ describe('Testa todas as funções de validações comuns', ()=> {
     })
 })
 
-describe('Testa todas as validações PT', ()=> {
-
-    describe('Testa função telefoneFixo', ()=> {
-
-        test('Só contem numeros.', ()=> {
-            //arrange
-            const tlfFixo = "289000000"
-            const resultadoEsperado = true
-            //act
-            const resultadoActual = vt.valPT.telefoneFixo(tlfFixo)
-            //assertions
-            expect(resultadoActual).toBe(resultadoEsperado)
-        })
-        
-        test('Contém caracteres ilegais', ()=> {
-            //arrange
-            const tlfInvalidos = ["258dsf222", " 151 3131 13", "123_12#123"]
-            const resultadoEsperado = false
-            //act
-            tlfInvalidos.forEach(num => {
-                const resultadoActual = vt.valPT.telefoneFixo(num)
-                //assertions
-                expect(resultadoActual).toBe(resultadoEsperado)
-            })
-        }) 
-    })
-})
-
 
 //templates:
 

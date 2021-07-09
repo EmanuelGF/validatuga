@@ -29,6 +29,9 @@ const Validatuga = {
    * de telefone, CC, telemovel, NIF etc...
    */
   valPT: {
+
+    //WIP
+    
     /**
      * Valida telefone fixo
      * @param {number} num numero de telefone fixo.
@@ -37,6 +40,8 @@ const Validatuga = {
     telefoneFixo: function (num) {
       return null;
     },
+
+    //Sem testes feitos
     telemovel: function () {
       return null;
     },
