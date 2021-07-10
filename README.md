@@ -29,16 +29,15 @@ Biblioteca em Javascript de validações de dados sociais de Paises de Lingua Po
 
 ```
 NOTAS IMPORTANTES:
-- data.js contem os recursos para as validações.
+- data.js contém os recursos para as validações.
 - validatuga.js é o ficheiro que contem todas as funções para as validações.
 - Jest é a framework usada para testar as funções. **É encorajada uma abordagem TDD na construção da biblioteca.**
+- util.js contém funções de utilitárias de validatuga.js.
 
 ## Usar nos vossos projetos
-Basta copiar os ficheiros:
-*validatuga.js* e *data*.js para os vossos projetos e depois importar.
-
-Importar a biblioteca: 
-`const vt = require('../validatuga.js')`
+- Basta copiar os ficheiros (`validatuga.js`, `data.js` e `util.js`) para o mesmo sitio no vosso projeto e depois importar:
+- Importar a biblioteca: 
+ex. `const vt = require('./validatuga.js')`
 
 # Contribuir
 
@@ -46,5 +45,7 @@ Importar a biblioteca:
 2. Clonar para a vossa maquina local
 3. `npm install`
 4. Criar o código para as funçoes no ficheiro validatuga.js correr e passar nos testes correndo `npm test`
+
+*Leia o guia de contribuições no ficheiro CONTRIBUTING.md*
 
 *Pff crie um issue para novas funções e testes que ñ estejam presentes.*
