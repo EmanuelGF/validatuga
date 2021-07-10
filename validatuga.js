@@ -5,7 +5,7 @@ const Validatuga = {
   Comuns: {
     /**
      * Verifica se é um endereço de email válido.
-     * @param {string} email recebe um endereço de email. 
+     * @param {string} email recebe um endereço de email.
      * @returns true se for um email válido.
      */
     valEmail: function (email) {
@@ -47,11 +47,12 @@ const Validatuga = {
      * @returns true se for um número válido.
      */
     telemovel: function (num) {
+      //Implementar função e passar testes
       return null;
     },
 
+    //SEM TESTES
 
-    //Sem testes feitos
     telemovelOperadora: function () {
       return null;
     },
