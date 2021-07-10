@@ -51,3 +51,6 @@ ex. `const vt = require('./validatuga.js')`
 *Leia o guia de contribuições no ficheiro CONTRIBUTING.md*
 
 *Pff crie um issue para novas funções e testes que ñ estejam presentes.*
+
+Se esta é a sua primeira vez a contribuir estou disponivél para qualquer explicação. Iniciantes bem vindos!! 🎉👋
+
