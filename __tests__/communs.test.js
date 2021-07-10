@@ -3,7 +3,7 @@
 const vt = require('../validatuga.js')
 const {emailsInvalidos, emailsValidos} = require('../testData')
 
-describe('Testa todas as funções de validações comuns', ()=> {
+describe('Testa todas as funções de validações Comuns', ()=> {
     
 
     describe('Testa funnção valEmail', ()=> {
@@ -14,7 +14,7 @@ describe('Testa todas as funções de validações comuns', ()=> {
             //act
             listaEmails.forEach(email => {
                 //console.log('email: ' + email)
-                const resultadoActual = vt.comuns.valEmail(email)
+                const resultadoActual = vt.Comuns.valEmail(email)
                 //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })
@@ -26,7 +26,7 @@ describe('Testa todas as funções de validações comuns', ()=> {
             const resultadoEsperado = false
             //act
             listaEmails.forEach(email => {
-                const resultadoActual = vt.comuns.valEmail(email)
+                const resultadoActual = vt.Comuns.valEmail(email)
                 //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })
@@ -40,7 +40,7 @@ describe('Testa todas as funções de validações comuns', ()=> {
             const resultadoEsperado = true
             //act
             listaInputs.forEach(input => {
-                const resultadoActual = vt.comuns.soLetras(input)
+                const resultadoActual = vt.Comuns.soLetras(input)
                 //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })

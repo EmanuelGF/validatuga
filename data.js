@@ -1,4 +1,26 @@
-const indicativosTelefoneFixo = [
+//Portugal
+
+const planoNumeracaoPT = [
+  ["00", "Indicativo para acesso internacional"],
+  ["01-09", "Reservados para uso futuro"],
+  ["1", "Números curtos"],
+  ["2", "Serviço telefónico acessível ao público em local fixo"],
+  ["3", "Serviços nómadas"],
+  ["4", "Livre"],
+  ["5", "Reservado para eventual expansão"],
+  ["6", "Serviços de audiotexto, de acesso a redes de dados etc."],
+  [
+    "7",
+    "Serviços de redes privativas de voz, de acesso universal, de carácter utilitário de tarifa majorada de tarifa única por chamada e de números de encaminhamento interoperadores",
+  ],
+  [
+    "8",
+    "Serviços de chamadas grátis para o chamador, de chamadas com custos partilhados, de cartão virtual de chamadas, de número pessoal",
+  ],
+  ["9", "Serviços de comunicações móveis"],
+];
+
+const indicativosTlfFixoPT = [
   ["Lisboa", "21"],
   ["Porto", "22"],
   ["Mealhada", "231"],
@@ -54,11 +76,32 @@ const indicativosTelefoneFixo = [
 ];
 
 const indicativosTelemovel = [
-  ["Vodafone", "91"],
   ["MEO", "96"],
+  ["MEO", "9240"],
+  ["MEO", "9244"],
+  ["MEO", "925"],
+  ["MEO", "927"],
   ["NOS", "93"],
+  ["Vodafone", "91"],
+  ["Vodafone", "921"],
 ];
 
+//Brazil
+
+//Angola
+
+//Moçambique
+
+//Guiné-Bissau
+
+//Timor-Leste
+
+//Cabo Verde
+
+//São Tomé e Principe
+
 module.exports = {
-  indicativosTelefoneFixo,
+  indicativosTlfFixoPT,
+  planoNumeracaoPT,
+  indicativosTelemovel,
 };
