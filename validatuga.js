@@ -1,12 +1,12 @@
-const d = require('./data')
+const d = require("./data");
 
 const Validatuga = {
   //Validações comuns
-  comuns: {
+  Comuns: {
     /**
      * Verifica se é um endereço de email válido.
-     * @param {string} email
-     * @returns {boolean}
+     * @param {string} email recebe um endereço de email. 
+     * @returns true se for um email válido.
      */
     valEmail: function (email) {
       const padrao = /^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})$/; //regex
@@ -15,8 +15,8 @@ const Validatuga = {
 
     /**
      * Verifica se o input é composto apenas por caracteres a-z e A-Z.
-     * @param {string} input
-     * @returns {boolean}
+     * @param {string} input recebe uma cadeia de caracteres.
+     * @returns true se o input é composto apenas por caracteres a-z e A-Z.
      */
     soLetras: function (input) {
       const padrao = /^[a-zA-Z]*$/;
@@ -28,23 +28,30 @@ const Validatuga = {
    * Validações de dados de Portugal como numeros
    * de telefone, CC, telemovel, NIF etc...
    */
-  valPT: {
-
+  PT: {
     //WIP
-    
+
     /**
-     * Valida telefone fixo
-     * @param {number} num numero de telefone fixo.
-     * @returns {boolean} true se for um numero de telefone fixo valido.
+     * Valida telefone fixo Local.
+     * @param {string} num numero de telefone fixo(PT).
+     * @returns true se for um numero de telefone fixo local válido.
      */
     telefoneFixo: function (num) {
+      //Implementar função e passar testes
       return null;
     },
 
-    //Sem testes feitos
-    telemovel: function () {
+    /**
+     * Valida numero de telemovel.
+     * @param {*} num Recebe um numeros de telemovel(PT).
+     * @returns true se for um número válido.
+     */
+    telemovel: function (num) {
       return null;
     },
+
+
+    //Sem testes feitos
     telemovelOperadora: function () {
       return null;
     },
@@ -69,13 +76,13 @@ const Validatuga = {
    * Validações de dados sociais do Brazil como numeros
    * de telefone, CC, telemovel, NIF etc...
    */
-  valBR: {},
+  BR: {},
 
   /**
    * Validações de dados de Angola como numeros
    * de telefone, CC, telemovel, NIF etc...
    */
-  valANG: {},
+  ANG: {},
 };
 
 module.exports = Validatuga;
