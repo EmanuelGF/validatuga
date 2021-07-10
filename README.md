@@ -1,5 +1,7 @@
 # validatuga (WIP - A trabalhar para a primeira release)
 
+[![Testes Actions Status](https://github.com/EmanuelGF/validatuga/workflows/validatugaCI/badge.svg)](https://github.com/EmanuelGF/validatuga/actions)
+
 Biblioteca em Javascript de validações de dados sociais de Paises de Lingua Portuguesa como números de telefones, Cartão de cidadão, cod-postal etc...
 Útil para validar dados vindos de formulários.
 
