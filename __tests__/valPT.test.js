@@ -4,7 +4,7 @@ const { indicativosTlfFixoPT } = require("../data");
 
 describe("Testa todas as validações PT", () => {
 
-  describe("Testes para a função telefoneFixo()", () => {
+  describe.only("Testes para a função telefoneFixo()", () => {
     /**
      * Valida números de telefone fixo local
      */
@@ -49,7 +49,7 @@ describe("Testa todas as validações PT", () => {
         expect(resultadoActualInvalido).toBe(false);
       });
       ListaDeIndicativos.forEach((i) => {
-        i.length < 2 ? (i = i + "1234567") : (i = i + "123456");
+        i.length <= 2 ? i = i + "1234567" : i = i + "123456";
         const resultadoActualValido = vt.PT.telefoneFixo(i);
         expect(resultadoActualValido).toBe(true);
       });
