@@ -1,5 +1,8 @@
 const d = require("./data");
 
+//Dados PT
+const { indicativosTlfFixoPT } = require("./data");
+
 const Validatuga = {
   //Validações comuns
   Comuns: {
@@ -34,11 +37,22 @@ const Validatuga = {
     /**
      * Valida telefone fixo Local.
      * @param {string} num numero de telefone fixo(PT).
-     * @returns true se for um numero de telefone fixo local válido.
+     * @returns devolve verdadeiro se for um numero de telefone fixo local válido.
      */
     telefoneFixo: function (num) {
-      //Implementar função e passar testes
-      return null;
+      const tamanho = num.length === 9;
+      const soNumeros = Number(num) ? true : false;
+      const listaDeIndicativos = indicativosTlfFixoPT.map((i) => {
+        return i[1];
+      });
+      let indicativoValido = false;
+      for (let i of listaDeIndicativos) {
+        if (num.startsWith(i)) {
+          indicativoValido = true;
+          break;
+        }
+      }
+      return tamanho && soNumeros && indicativoValido;
     },
 
     /**
