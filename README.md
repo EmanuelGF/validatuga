@@ -1,15 +1,14 @@
-# validatuga (WIP - A trabalhar para a primeira release)
+# validatuga [![Testes Actions Status](https://github.com/EmanuelGF/validatuga/workflows/validatugaCI/badge.svg)](https://github.com/EmanuelGF/validatuga/actions)
 
-[![Testes Actions Status](https://github.com/EmanuelGF/validatuga/workflows/validatugaCI/badge.svg)](https://github.com/EmanuelGF/validatuga/actions)
+### Biblioteca em Javascript de funções de validação de dados sociais de Paises de Lingua Portuguesa como números de telefones, Cartão de cidadão, cod-postal etc...
 
-Biblioteca em Javascript de validações de dados sociais de Paises de Lingua Portuguesa como números de telefones, Cartão de cidadão, cod-postal etc...
-Útil para validar dados vindos de formulários.
-
-**Contribuições são mais que bem vindas!**
 
 ### Objetivo: 
 - Criar uma extensa biblioteca de validações de dados sociais especificos a cada país de lingua Portuguesa.
-
+### Casos de uso: 
+- Útil para validar dados vindos de formulários.
+- Websites
+- softwares empresariais
 
 ## Instalação
 
@@ -28,6 +27,7 @@ Biblioteca em Javascript de validações de dados sociais de Paises de Lingua Po
 +-- validatuga.js
 +-- data.js
 +-- testData.js
++-- util.js
 
 ```
 NOTAS IMPORTANTES:
@@ -37,7 +37,7 @@ NOTAS IMPORTANTES:
 - util.js contém funções de utilitárias de validatuga.js.
 
 ## Usar nos vossos projetos
-- Basta copiar os ficheiros (`validatuga.js`, `data.js` e `util.js`) para o mesmo sitio no vosso projeto e depois importar:
+- Basta copiar os ficheiros (`validatuga.js`, `data.js` e `util.js`) para o mesmo sítio no vosso projeto e depois importar:
 - Importar a biblioteca: 
 ex. `const vt = require('./validatuga.js')`
 
