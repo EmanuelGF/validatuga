@@ -6,7 +6,7 @@ const {emailsInvalidos, emailsValidos} = require('../testData')
 describe('Testa todas as funções de validações Comuns', ()=> {
     
 
-    describe('Testa funnção valEmail', ()=> {
+    describe('Testa funnção emailVal', ()=> {
         test('- Emails válidos retornam true', ()=> {
             //arrange
             const listaEmails = emailsValidos
@@ -14,7 +14,7 @@ describe('Testa todas as funções de validações Comuns', ()=> {
             //act
             listaEmails.forEach(email => {
                 //console.log('email: ' + email)
-                const resultadoActual = vt.Comuns.valEmail(email)
+                const resultadoActual = vt.Comuns.emailVal(email)
                 //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })
@@ -26,7 +26,7 @@ describe('Testa todas as funções de validações Comuns', ()=> {
             const resultadoEsperado = false
             //act
             listaEmails.forEach(email => {
-                const resultadoActual = vt.Comuns.valEmail(email)
+                const resultadoActual = vt.Comuns.emailVal(email)
                 //assertions
                 expect(resultadoActual).toBe(resultadoEsperado)
             })

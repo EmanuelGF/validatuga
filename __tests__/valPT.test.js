@@ -4,7 +4,7 @@ const { indicativosTlfFixoPT } = require("../data");
 
 describe("Testa todas as validações PT", () => {
 
-  describe.only("Testes para a função telefoneFixo()", () => {
+  describe("Testes para a função telefoneFixoVal()", () => {
     /**
      * Valida números de telefone fixo local
      */
@@ -14,8 +14,8 @@ describe("Testa todas as validações PT", () => {
       const tlfValido = "289456789";
       const tlfInvalido = "1234567899";
       //act
-      const resultadoActualValido = vt.PT.telefoneFixo(tlfValido);
-      const resultadoActualInvalido = vt.PT.telefoneFixo(tlfInvalido);
+      const resultadoActualValido = vt.PT.telefoneFixoVal(tlfValido);
+      const resultadoActualInvalido = vt.PT.telefoneFixoVal(tlfInvalido);
       //assertions
       expect(resultadoActualValido).toBe(true);
       expect(resultadoActualInvalido).toBe(false);
@@ -26,9 +26,9 @@ describe("Testa todas as validações PT", () => {
       const tlfFixo = "289456789";
       const tlfInvalidos = ["258dsf222", " 151 3131 13", "123_12#123"];
       //act
-      const resultadoActualValido = vt.PT.telefoneFixo(tlfFixo);
+      const resultadoActualValido = vt.PT.telefoneFixoVal(tlfFixo);
       tlfInvalidos.forEach((num) => {
-        const resultadoActualInvalidos = vt.PT.telefoneFixo(num);
+        const resultadoActualInvalidos = vt.PT.telefoneFixoVal(num);
         //assertions
         expect(resultadoActualInvalidos).toBe(false);
       });
@@ -44,19 +44,19 @@ describe("Testa todas as validações PT", () => {
       });
       //act
       tlfInvalidos.forEach((num) => {
-        const resultadoActualInvalido = vt.PT.telefoneFixo(num);
+        const resultadoActualInvalido = vt.PT.telefoneFixoVal(num);
         //assertions
         expect(resultadoActualInvalido).toBe(false);
       });
       ListaDeIndicativos.forEach((i) => {
         i.length <= 2 ? i = i + "1234567" : i = i + "123456";
-        const resultadoActualValido = vt.PT.telefoneFixo(i);
+        const resultadoActualValido = vt.PT.telefoneFixoVal(i);
         expect(resultadoActualValido).toBe(true);
       });
     });
   });
 
-  describe("Testes para a função telemovel()", () => {
+  describe("Testes para a função telemovelVal()", () => {
     //Valida números de telemovel PT
 
     test("Só contem 9 caracteres", () => {
@@ -64,8 +64,8 @@ describe("Testa todas as validações PT", () => {
       const tlmValido = "912123123";
       const tlmInvalido = "12312312313";
       //act
-      const resultadoActualValido = vt.PT.telemovel(tlmValido);
-      const resultadoActualInvalido = vt.PT.telemovel(tlmInvalido);
+      const resultadoActualValido = vt.PT.telemovelVal(tlmValido);
+      const resultadoActualInvalido = vt.PT.telemovelVal(tlmInvalido);
       //assertions
       expect(resultadoActualValido).toBe(true);
       expect(resultadoActualInvalido).toBe(false);
@@ -76,9 +76,9 @@ describe("Testa todas as validações PT", () => {
       const tlmValido = "912123123";
       const tlmInvalidos = ["958dsf222", " 951 3131 13", "923_12#123"];
       //act
-      const resultadoActualValido = vt.PT.telemovel(tlmValido);
+      const resultadoActualValido = vt.PT.telemovelVal(tlmValido);
       tlmInvalidos.forEach((num) => {
-        const resultadoActualInvalidos = vt.PT.telemovel(num);
+        const resultadoActualInvalidos = vt.PT.telemovelVal(num);
         //assertions
         expect(resultadoActualInvalidos).toBe(false);
       });
@@ -91,9 +91,9 @@ describe("Testa todas as validações PT", () => {
       const tlmValido = "912123123";
       const tlmInvalidos = ["112123123", "212123123", "712123123", "412123123"];
       //act
-      const resultadoActualValido = vt.PT.telemovel(tlmValido);
+      const resultadoActualValido = vt.PT.telemovelVal(tlmValido);
       tlmInvalidos.forEach((num) => {
-        const resultadoActualInvalido = vt.PT.telemovel(num);
+        const resultadoActualInvalido = vt.PT.telemovelVal(num);
         //assertion
         expect(resultadoActualInvalido).toBe(false);
       });
