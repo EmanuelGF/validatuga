@@ -30,6 +30,15 @@
 +-- util.js
 
 ```
+
+
+**Validatuga (Objeto)**
+- Comuns (funções de validação comuns como email, soLetras etc...)
+- BR (funções de validação para dados sociais de Brazil)
+- PT (funções de validação para dados sociais de Portugal)
+- ANG (funções de validação para dados sociais de Angola)
+- ...
+
 NOTAS IMPORTANTES:
 - data.js contém os recursos para as validações.
 - validatuga.js é o ficheiro que contem todas as funções para as validações.
