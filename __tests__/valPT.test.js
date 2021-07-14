@@ -101,6 +101,39 @@ describe("Testa todas as validações PT", () => {
       expect(resultadoActualValido).toBe(true);
     });
   });
+
+  describe("Testes para a função codPostVal()", () => {
+    /**
+     * Valida códigos postais PT
+     */
+
+    test("Só contem 4 caracteres", () => {
+      //arrange
+      const cpValido = "2894";
+      const cpInvalido = "12344";
+      //act
+      const resultadoActualValido = vt.PT.codPostalVal(cpValido);
+      const resultadoActualInvalido = vt.PT.codPostalVal(cpInvalido);
+      //assertions
+      expect(resultadoActualValido).toBe(true);
+      expect(resultadoActualInvalido).toBe(false);
+    });
+
+    test("Só contém numeros.", () => {
+      //arrange
+      const cpValido = "2894";
+      const cpInvalidos = ["258d", "15 1", "3_1#"];
+      //act
+      const resultadoActualValido = vt.PT.codPostalVal(cpValido);
+      cpInvalidos.forEach((cp) => {
+        const resultadoActualInvalidos = vt.PT.codPostalVal(cp);
+        //assertions
+        expect(resultadoActualInvalidos).toBe(false);
+      });
+      //assertions
+      expect(resultadoActualValido).toBe(true);
+    });
+  });
 });
 
 //templates:
