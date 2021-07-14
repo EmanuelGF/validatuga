@@ -92,7 +92,8 @@ const Validatuga = {
      * @returns true se for um código postal válido.
      */
     codPostalVal: function (cp) {
-      return null;
+      const tamanho = cp.length === 4;
+      return tamanho && soNumeros(cp);
     },
 
     /**
