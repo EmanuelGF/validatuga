@@ -82,7 +82,7 @@ const Validatuga = {
      * @param {string} num Recebe um numero de telemovel(PT).
      * @returns nome da operadora (ex. 'meo', 'nos', 'vodafone').
      */
-    TelemovelOp: function (num) {
+    telemovelOp: function (num) {
       return null;
     },
 
@@ -104,18 +104,45 @@ const Validatuga = {
     codPostalArea: function (cp) {
       return null;
     },
+
+    /**
+     * Valida o número de cartão de cidadão. (PT)
+     * @param {string} num Recebe um número de CC.
+     * @returns verdadeiro se for um número válido. 
+     */
     ccidadaoVal: function (num) {
       return null;
     },
+
+    /**
+     * Valida um número de identificação fiscal. (PT)
+     * @param {string} num Recebe um número nif. 
+     * @returns verdadeiro se for um número válido.
+     */
     nifVal: function (num) {
       return null;
     },
+
+    /**
+     * Valida um número do sistema nacional de saúde. (PT)
+     * @param {string} num Recebe um número niss. 
+     * @returns verdadeiro se for um número válido.
+     */
     nissVal: function (num) {
       return null;
     },
+
+    /**
+     * Valida um número de carta de condução. (PT)
+     * @param {string} num Recebe um número carta de condução. 
+     * @returns verdadeiro se for um número válido.
+     */
     cConducaoVal: function (num) {
       return null;
     },
+
+    //Adicionar mais validações abaixo. 
+
   },
 
   /**
