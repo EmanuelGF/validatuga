@@ -3,7 +3,11 @@
 const d = require("./data");
 
 //Dados PT
-const { indicativosTlfFixoPT, indicativosTelemovel } = require("./data");
+const {
+  indicativosTlfFixoPT,
+  indicativosTelemovel,
+  validationSets,
+} = require("./data");
 //Utilitários
 const { soNumeros } = require("./util");
 
@@ -33,7 +37,7 @@ const Validatuga = {
 
   /**
    * Validações de dados de Portugal como numeros
-   * de telefone, CC, telemovel, NIF etc...
+   * de telefone, CC, telemovel, num etc...
    */
   PT: {
     /**
@@ -108,7 +112,7 @@ const Validatuga = {
     /**
      * Valida o número de cartão de cidadão. (PT)
      * @param {string} num Recebe um número de CC.
-     * @returns verdadeiro se for um número válido. 
+     * @returns verdadeiro se for um número válido.
      */
     ccidadaoVal: function (num) {
       return null;
@@ -116,16 +120,39 @@ const Validatuga = {
 
     /**
      * Valida um número de identificação fiscal. (PT)
-     * @param {string} num Recebe um número nif. 
+     * @param {string} num Recebe um número nif.
      * @returns verdadeiro se for um número válido.
      */
     nifVal: function (num) {
-      return null;
+      if (soNumeros(num) === false) return false;
+      if (num.length !== 9) return false;
+
+      if (
+        !validationSets.one.includes(num.substr(0, 1)) &&
+        !validationSets.two.includes(num.substr(0, 2))
+      ) {
+        return false;
+      }
+
+      const total =
+        num[0] * 9 +
+        num[1] * 8 +
+        num[2] * 7 +
+        num[3] * 6 +
+        num[4] * 5 +
+        num[5] * 4 +
+        num[6] * 3 +
+        num[7] * 2;
+      const modulo11 = Number(total) % 11;
+
+      const checkDigit = modulo11 < 2 ? 0 : 11 - modulo11;
+
+      return checkDigit === Number(num[8]);
     },
 
     /**
      * Valida um número do sistema nacional de saúde. (PT)
-     * @param {string} num Recebe um número niss. 
+     * @param {string} num Recebe um número niss.
      * @returns verdadeiro se for um número válido.
      */
     nissVal: function (num) {
@@ -134,26 +161,25 @@ const Validatuga = {
 
     /**
      * Valida um número de carta de condução. (PT)
-     * @param {string} num Recebe um número carta de condução. 
+     * @param {string} num Recebe um número carta de condução.
      * @returns verdadeiro se for um número válido.
      */
     cConducaoVal: function (num) {
       return null;
     },
 
-    //Adicionar mais validações abaixo. 
-
+    //Adicionar mais validações abaixo.
   },
 
   /**
    * Validações de dados sociais do Brazil como numeros
-   * de telefone, CC, telemovel, NIF etc...
+   * de telefone, CC, telemovel, num etc...
    */
   BR: {},
 
   /**
    * Validações de dados de Angola como numeros
-   * de telefone, CC, telemovel, NIF etc...
+   * de telefone, CC, telemovel, num etc...
    */
   ANG: {},
 };
