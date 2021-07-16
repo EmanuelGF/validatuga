@@ -3,7 +3,6 @@ const vt = require("../validatuga.js");
 const { indicativosTlfFixoPT } = require("../data");
 
 describe("Testa todas as validações PT", () => {
-
   describe("Testes para a função telefoneFixoVal()", () => {
     /**
      * Valida números de telefone fixo local
@@ -49,7 +48,7 @@ describe("Testa todas as validações PT", () => {
         expect(resultadoActualInvalido).toBe(false);
       });
       ListaDeIndicativos.forEach((i) => {
-        i.length <= 2 ? i = i + "1234567" : i = i + "123456";
+        i.length <= 2 ? (i = i + "1234567") : (i = i + "123456");
         const resultadoActualValido = vt.PT.telefoneFixoVal(i);
         expect(resultadoActualValido).toBe(true);
       });
@@ -132,6 +131,54 @@ describe("Testa todas as validações PT", () => {
       });
       //assertions
       expect(resultadoActualValido).toBe(true);
+    });
+  });
+
+  describe("Testes para a função nifVal()", () => {
+    test("Contém apenas 9 caracteres.", () => {
+      //arrange
+      const nifValido = "999999990";
+      const nifsInvalidos = ["999", "9999999999"];
+      //act
+      const resultadoActualValido = vt.PT.nifVal(nifValido);
+      nifsInvalidos.forEach((nif) => {
+        const resultadoActualInvalido = vt.PT.nifVal(nif);
+        //assertions
+        expect(resultadoActualInvalido).toBe(false);
+      });
+      //assertions
+      expect(resultadoActualValido).toBe(true);
+    });
+
+    test("Só contem números", () => {
+      //arrange
+      const nifValido = "999999990";
+      const nifsInvalidos = ["999sdfa", "99999 9990", "safsdafds", "99999999 "];
+      //act
+      const resultadoActualValido = vt.PT.nifVal(nifValido);
+      nifsInvalidos.forEach((nif) => {
+        const resultadoActualInvalido = vt.PT.nifVal(nif);
+        console.log(resultadoActualInvalido + nif);
+        //assertions
+        expect(resultadoActualInvalido).toBe(false);
+      });
+      //assertions
+      expect(resultadoActualValido).toBe(true);
+    });
+
+    test("Valida com base no número de controlo.", () => {
+      //arrange
+      const nifsValidos = ["999999990", "501442600", "505305500"];
+      const nifInvalido = "999999999";
+      //act
+      const resultadoActualInvalido = vt.PT.nifVal(nifInvalido);
+      nifsValidos.forEach((nif) => {
+        const resultadoActualValido = vt.PT.nifVal(nif);
+        //assertions
+        expect(resultadoActualValido).toBe(true);
+      });
+      //assertions
+      expect(resultadoActualInvalido).toBe(false);
     });
   });
 });

@@ -86,6 +86,12 @@ const indicativosTelemovel = [
   ["Vodafone", "921"],
 ];
 
+// nif data
+const validationSets = {
+  one: ["1", "2", "3", "5", "6", "8"],
+  two: ["45", "70", "71", "72", "74", "75", "77", "79", "90", "91", "98", "99"],
+};
+
 //Brazil
 
 //Angola
@@ -104,4 +110,5 @@ module.exports = {
   indicativosTlfFixoPT,
   planoNumeracaoPT,
   indicativosTelemovel,
+  validationSets,
 };
