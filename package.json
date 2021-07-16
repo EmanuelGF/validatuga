@@ -1,7 +1,7 @@
 {
   "name": "validatuga",
   "version": "0.0.1",
-  "description": "Biblioteca de funções que testam a validade de dados sociais de Portugal.",
+  "description": "Biblioteca de funções que testam a validade de dados sociais de paises de lingua portuguesa.",
   "main": "validatuga.js",
   "scripts": {
     "test": "jest __tests__/ --coverage"
