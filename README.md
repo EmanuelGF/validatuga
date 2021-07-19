@@ -53,13 +53,14 @@ ex. `const vt = require('./validatuga.js')`
 # Contribuir
 
 1. Fork do projeto
-2. Clonar para a vossa maquina local
+2. Clonar para a vossa máquina local
 3. `npm install`
 4. Criar o código para as funçoes no ficheiro validatuga.js correr e passar nos testes correndo `npm test`
 
 *Leia o guia de contribuições no ficheiro CONTRIBUTING.md*
 
-*Pff crie um issue para novas funções e testes que ñ estejam presentes.*
+### *Pff crie um issue para novas funções e testes que ñ estejam presentes.*
 
 Se esta é a sua primeira vez a contribuir estou disponivél para qualquer explicação. Iniciantes bem vindos!! 🎉👋
+
 
