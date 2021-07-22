@@ -1,7 +1,5 @@
 "use strict";
 
-const d = require("./data");
-
 //Dados PT
 const {
   indicativosTlfFixoPT,
@@ -87,7 +85,14 @@ const Validatuga = {
      * @returns nome da operadora (ex. 'meo', 'nos', 'vodafone').
      */
     telemovelOp: function (num) {
-      return null;
+      const invalido = false;
+      if (this.telemovelVal(num)) {
+        for (const arr of indicativosTelemovel) {
+          if (num.startsWith(arr[1])) return arr[0];
+        }
+        return invalido;
+      } 
+      return invalido;
     },
 
     /**

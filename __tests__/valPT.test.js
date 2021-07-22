@@ -158,7 +158,6 @@ describe("Testa todas as validações PT", () => {
       const resultadoActualValido = vt.PT.nifVal(nifValido);
       nifsInvalidos.forEach((nif) => {
         const resultadoActualInvalido = vt.PT.nifVal(nif);
-        console.log(resultadoActualInvalido + nif);
         //assertions
         expect(resultadoActualInvalido).toBe(false);
       });
@@ -179,6 +178,51 @@ describe("Testa todas as validações PT", () => {
       });
       //assertions
       expect(resultadoActualInvalido).toBe(false);
+    });
+  });
+
+  describe("Testes para a função telemovelOp", () => {
+    test("Devolve operadoras correspondentes.", () => {
+      //arrange
+      const numsValidosMeo = [
+        "961231231",
+        "924012312",
+        "924412312",
+        "925123123",
+        "927123123",
+      ];
+      const numValidoNos = "931231234";
+      const numsValidosVodafone = ["911234123", "921123123"];
+      const resultadoEsperadoMeo = "MEO";
+      const resultadoEsperadoNos = "NOS";
+      const resultadoEsperadoVodafone = "Vodafone";
+
+      //act
+      numsValidosMeo.forEach((num) => {
+        const resultadoActual = vt.PT.telemovelOp(num);
+        //assertions
+        expect(resultadoActual).toBe(resultadoEsperadoMeo);
+      });
+
+      numsValidosVodafone.forEach((num) => {
+        const resultadoActual = vt.PT.telemovelOp(num);
+        //assertions
+        expect(resultadoActual).toBe(resultadoEsperadoVodafone);
+      });
+
+      const resultadoActual = vt.PT.telemovelOp(numValidoNos);
+      //assertions
+      expect(resultadoActual).toBe(resultadoEsperadoNos);
+    });
+
+    test('Devolve falso quando recebe um número inválido"', () => {
+      //arrange
+      const numInvalido = "123123123";
+      const resultadoEsperado = false;
+      //act
+      const resultadoActual = vt.PT.telemovelOp(numInvalido);
+      //assertions
+      expect(resultadoActual).toBe(false);
     });
   });
 });
