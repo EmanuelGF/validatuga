@@ -1,6 +1,7 @@
 //Testes para validações de Portugal
 const vt = require("../validatuga.js");
-const { indicativosTlfFixoPT } = require("../data");
+const { indicativosTlfFixoPT, codigosPostal } = require("../data");
+const { criaSquencia } = require("../util.js");
 
 describe("Testa todas as validações PT", () => {
   describe("Testes para a função telefoneFixoVal()", () => {
@@ -132,6 +133,33 @@ describe("Testa todas as validações PT", () => {
       //assertions
       expect(resultadoActualValido).toBe(true);
     });
+
+    test("Começa com codigo válido.", () => {
+      //arrange
+      const resultadoEsperado = true;
+      // Os codigos de postal são aqui validados com base nos primeiros 2 números o que pode estar incorreto
+      // visto que existe um lista de 4 números especificos a cada área.
+      const listaCodigosValidos = codigosPostal.map((i) => {
+        return criaSquencia(i[1], 4);
+      });
+
+      //act
+      listaCodigosValidos.forEach((cod) => {
+        const resultadoActual = vt.PT.codPostalVal(cod);
+        //assertions
+        expect(resultadoActual).toBe(resultadoEsperado);
+      });
+    });
+
+    test("Devolve falso quando não começa com um cod válido.", () => {
+      //arrange
+      const codInvalido = "3999";
+      const resultadoEsperado = false;
+      //act
+      const resultadoActual = vt.PT.codPostalVal(codInvalido);
+      //assertions
+      expect(resultadoActual).toBe(resultadoEsperado);
+    });
   });
 
   describe("Testes para a função nifVal()", () => {
@@ -181,7 +209,7 @@ describe("Testa todas as validações PT", () => {
     });
   });
 
-  describe("Testes para a função telemovelOp", () => {
+  describe("Testes para a função telemovelOp()", () => {
     test("Devolve operadoras correspondentes.", () => {
       //arrange
       const numsValidosMeo = [
@@ -225,19 +253,43 @@ describe("Testa todas as validações PT", () => {
       expect(resultadoActual).toBe(false);
     });
   });
+
+  describe("Testes para a função codPostalArea()", () => {
+    test("Devolve area postal correspondente.", () => {
+      //arrange
+      // Os codigos de postal são aqui validados com base nos primeiros 2 números o que pode estar incorreto
+      // visto que existe um lista de 4 números especificos a cada área.
+      const listaCodigosValidos = [ "8100", "8125"]
+      const resultadoEsperado = "Loulé"
+      //act
+      listaCodigosValidos.forEach(cod => {
+        const resultadoActual = vt.PT.codPostalArea(cod)
+        //assertions
+        expect(resultadoActual).toBe(resultadoEsperado)
+      })
+    });
+
+    test("Cod postal inválido devolve falso", () => {
+      //arrange
+      // Os codigos de postal são aqui validados com base nos primeiros 2 números o que pode estar incorreto
+      // visto que existe um lista de 4 números especificos a cada área.
+      const listaCodigosValidos = [ "3999", "7999"]
+      const resultadoEsperado = false
+      //act
+      listaCodigosValidos.forEach(cod => {
+        const resultadoActual = vt.PT.codPostalArea(cod)
+        //assertions
+        expect(resultadoActual).toBe(resultadoEsperado)
+      })
+    });
+
+  });
 });
 
 //templates:
 
 /* 
 
-test('', ()=> {
-    //arrange
-    const dados = 
-    const resultadoEsperado = 
-    //act
-    const resultadoActual = 
-    //assertions
-}) 
+
 
 */
