@@ -5,6 +5,7 @@ const {
   indicativosTlfFixoPT,
   indicativosTelemovel,
   validationSets,
+  codigosPostal
 } = require("./data");
 //Utilitários
 const { soNumeros } = require("./util");
@@ -102,7 +103,12 @@ const Validatuga = {
      */
     codPostalVal: function (cp) {
       const tamanho = cp.length === 4;
-      return tamanho && soNumeros(cp);
+      let codInicialValido = false;
+      const listaCodigos = codigosPostal.map(i => {return i[1]})
+      listaCodigos.forEach(cod => {
+        if(cp.startsWith(cod)) codInicialValido = true; 
+      })
+      return tamanho && soNumeros(cp) && codInicialValido;
     },
 
     /**
@@ -111,7 +117,14 @@ const Validatuga = {
      * @returns nome da região (ex. 'Faro', 'Lisboa', 'Loulé')
      */
     codPostalArea: function (cp) {
-      return null;
+      const invalido = false;
+      if (this.codPostalVal(cp)) {
+        for (const arr of codigosPostal) {
+          if (cp.startsWith(arr[1])) return arr[0];
+        }
+        return invalido;
+      } 
+      return invalido;
     },
 
     /**
